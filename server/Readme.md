@@ -1,3 +1,11 @@
+# 📑 Table of Contents
+
+- [Installation](#Authentication)
+
+
+
+
+
 # 🧾 User Registration API
 
 This API allows users to register a new account in the system.
