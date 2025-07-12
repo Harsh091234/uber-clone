@@ -1,25 +1,23 @@
 # 📑 Table of Contents
 
-- [Installation](#Authentication)
+## API docs
+- [User Registration](#Authentication)
 
 
-
-
-
-# 🧾 User Registration API
+#  User Registration API
 
 This API allows users to register a new account in the system.
 
 ---
 
-## 🚀 Endpoint
+##  Endpoint
 
 **POST** `/api/users/register`
 Registers a new user and returns a JSON Web Token (JWT) along with user data.
 
 ---
 
-## 📥 Request Body
+##  Request Body
 
 Send data as `application/json`.
 
