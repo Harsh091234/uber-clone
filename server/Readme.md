@@ -1,50 +1,74 @@
-🔐 User Registration API
-POST /api/users/register
-Registers a new user and returns a JWT token along with the created user object.
+# 🧾 User Registration API
 
-📥 Request Body
-json
-Copy
-Edit
+This API allows users to register a new account in the system.
+
+---
+
+## 🚀 Endpoint
+
+**POST** `/api/users/register`
+
+Registers a new user and returns a JSON Web Token (JWT) along with user data.
+
+---
+
+## 📥 Request Body
+
+Send data as `application/json`.
+
+### Required Fields
+
+| Field                  | Type     | Required | Validation                     |
+|------------------------|----------|----------|--------------------------------|
+| `fullname.firstname`   | `string` |  Yes   | Minimum 3 characters           |
+| `fullname.lastname`    | `string` |  No    | Optional                       |
+| `email`                | `string` |  Yes   | Must be a valid email address  |
+| `password`             | `string` |  Yes   | Minimum 6 characters           |
+
+### Example
+
+```json
 {
   "fullname": {
-    "firstname": "John",
+    "firstname": "Jane",
     "lastname": "Doe"
   },
-  "email": "john@example.com",
-  "password": "securePass123"
+  "email": "jane@example.com",
+  "password": "securePassword123"
 }
-Field	Type	Required	Description
-fullname.firstname	string	✅ Yes	Minimum 3 characters
-fullname.lastname	string	❌ No	Optional
-email	string	✅ Yes	Must be a valid email
-password	string	✅ Yes	Minimum 6 characters
 
-✅ Successful Response 201 Created
-json
-Copy
-Edit
-{
-  "token": "jwt_token_here",
+---
+
+## Success Response
+
+### Status: 201 Created
+<pre> <code>```json 
+{ "token": "jwt_token_here",
   "user": {
     "_id": "64b69e5b8ffb4b1b8dbccfea",
     "fullname": {
-      "firstname": "John",
+      "firstname": "Jane",
       "lastname": "Doe"
     },
-    "email": "john@example.com"
-  }
-}
-❌ Validation Error 400 Bad Request
-json
-Copy
-Edit
-{
-  "errors": [
+    "email": "jane@example.com"
+  }}
+ ```</code> </pre>
+
+
+ ## Error Responses
+
+ ### Status: 400 Bad Request
+ <pre><code>```json{
+    "errors": [
     {
       "msg": "First name must 3 letters",
       "path": "fullname.firstname",
       "location": "body"
     }
   ]
-}
+ }```</code></pre>
+
+ ---
+
+ ## Authentication
+### This route is public — no token is required.
