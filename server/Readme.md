@@ -63,5 +63,5 @@ Send data as `application/json`.
 ```
  ---
 
- ## Authentication
+## Authentication
 ### This route is public — no token is required.
