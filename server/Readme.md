@@ -1,23 +1,18 @@
 # 🧾 User Registration API
-
 This API allows users to register a new account in the system.
 
 ---
 
 ## 🚀 Endpoint
-
 **POST** `/api/users/register`
-
 Registers a new user and returns a JSON Web Token (JWT) along with user data.
 
 ---
 
 ## 📥 Request Body
-
 Send data as `application/json`.
 
 ### Required Fields
-
 | Field                  | Type     | Required | Validation                     |
 |------------------------|----------|----------|--------------------------------|
 | `fullname.firstname`   | `string` |  Yes   | Minimum 3 characters           |
@@ -26,7 +21,6 @@ Send data as `application/json`.
 | `password`             | `string` |  Yes   | Minimum 6 characters           |
 
 ### Example
-
 ```json
 {
   "fullname": {
@@ -40,7 +34,6 @@ Send data as `application/json`.
 ---
 
 ## Success Response
-
 ### Status: 201 Created
 ```json 
 { "token": "jwt_token_here",
@@ -53,9 +46,9 @@ Send data as `application/json`.
     "email": "jane@example.com"
   }}
 ```
+---
 
  ## Error Responses
-
  ### Status: 400 Bad Request
  ```json
  {
