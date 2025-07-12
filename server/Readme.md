@@ -1,9 +1,11 @@
-# Content
+# API DOCUMENTATION
 
-## API docs
+
+## Content
 ### User
-- [User Registration](#Authentication)
-
+- [Register User](#Authentication)
+- [Login User](#Authentication)
+- [Logout User](#Authentication)
 
 #  User Registration API
 
