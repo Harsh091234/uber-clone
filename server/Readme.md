@@ -1,6 +1,7 @@
-# 📑 Table of Contents
+# Content
 
 ## API docs
+### User
 - [User Registration](#Authentication)
 
 
