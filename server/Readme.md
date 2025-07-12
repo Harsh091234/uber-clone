@@ -42,7 +42,7 @@ Send data as `application/json`.
 ## Success Response
 
 ### Status: 201 Created
-<pre> <code>```json 
+```json 
 { "token": "jwt_token_here",
   "user": {
     "_id": "64b69e5b8ffb4b1b8dbccfea",
@@ -52,13 +52,13 @@ Send data as `application/json`.
     },
     "email": "jane@example.com"
   }}
- ```</code> </pre>
+ 
 
 
  ## Error Responses
 
  ### Status: 400 Bad Request
- <pre><code>```json{
+ ```json{
     "errors": [
     {
       "msg": "First name must 3 letters",
@@ -66,7 +66,7 @@ Send data as `application/json`.
       "location": "body"
     }
   ]
- }```</code></pre>
+ }
 
  ---
 
