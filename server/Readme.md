@@ -36,7 +36,7 @@ Send data as `application/json`.
   "email": "jane@example.com",
   "password": "securePassword123"
 }
-
+```
 ---
 
 ## Success Response
@@ -52,13 +52,13 @@ Send data as `application/json`.
     },
     "email": "jane@example.com"
   }}
- 
-
+```
 
  ## Error Responses
 
  ### Status: 400 Bad Request
- ```json{
+ ```json
+ {
     "errors": [
     {
       "msg": "First name must 3 letters",
@@ -67,7 +67,7 @@ Send data as `application/json`.
     }
   ]
  }
-
+```
  ---
 
  ## Authentication
