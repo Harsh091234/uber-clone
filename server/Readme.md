@@ -18,6 +18,7 @@ Captains: http://localhost:3000/api/captains
 
 ### Captain Endpoints
 - [Captain Registration](#captain-registration)
+- [Captain Login](#captain-login)
 - [Get Captain Profile](#get-captain-profile)
 - [Captain Logout](#captain-logout)
 
@@ -335,6 +336,83 @@ Send data as `application/json`.
 ```json
 {
   "message": "Captain already exists"
+}
+```
+
+### Authentication
+No authentication required.
+
+---
+
+## Captain Login
+
+Authenticate a captain and receive access token.
+
+### Endpoint
+```http
+POST /api/captains/login
+```
+
+### Request Body
+
+Send data as `application/json`.
+
+### Required Fields
+
+| Field      | Type     | Required | Validation                    |
+| ---------- | -------- | -------- | ----------------------------- |
+| `email`    | `string` | Yes      | Must be a valid email address |
+| `password` | `string` | Yes      | Minimum 6 characters          |
+
+**Example Request:**
+```json
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+```
+
+### Response
+
+**Success (200 OK):**
+```json
+{
+  "token": "jwt_token_here",
+  "captain": {
+    "_id": "64b69e5b8ffb4b1b8dbccfea",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "vehicle": {
+      "color": "Red",
+      "plate": "ABC123",
+      "capacity": 4,
+      "vehicletype": "car"
+    },
+    "status": "inactive"
+  }
+}
+```
+
+**Error (400 Bad Request):**
+```json
+{
+  "errors": [
+    {
+      "msg": "Invalid email",
+      "path": "email",
+      "location": "body"
+    }
+  ]
+}
+```
+
+**Error (401 Unauthorized):**
+```json
+{
+  "message": "Invalid email or password"
 }
 ```
 
