@@ -18,6 +18,8 @@ Captains: http://localhost:3000/api/captains
 
 ### Captain Endpoints
 - [Captain Registration](#captain-registration)
+- [Get Captain Profile](#get-captain-profile)
+- [Captain Logout](#captain-logout)
 
 ---
 
@@ -338,6 +340,90 @@ Send data as `application/json`.
 
 ### Authentication
 No authentication required.
+
+---
+
+## Get Captain Profile
+
+Retrieve authenticated captain's profile information.
+
+### Endpoint
+```http
+GET /api/captains/profile
+```
+
+### Request Body
+No request body required.
+
+### Response
+
+**Success (200 OK):**
+```json
+{
+  "captain": {
+    "_id": "64b69e5b8ffb4b1b8dbccfea",
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "vehicle": {
+      "color": "Red",
+      "plate": "ABC123",
+      "capacity": 4,
+      "vehicletype": "car"
+    },
+    "status": "inactive"
+  }
+}
+```
+
+**Error (401 Unauthorized):**
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+### Authentication
+Requires authentication. Include JWT token in:
+- **Cookie:** `token=jwt_token_here`
+- **Header:** `Authorization: Bearer jwt_token_here`
+
+---
+
+## Captain Logout
+
+Logout captain and invalidate their token.
+
+### Endpoint
+```http
+GET /api/captains/logout
+```
+
+### Request Body
+No request body required.
+
+### Response
+
+**Success (200 OK):**
+```json
+{
+  "message": "Logged out"
+}
+```
+
+**Error (401 Unauthorized):**
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+### Authentication
+Requires authentication. Include JWT token in:
+- **Cookie:** `token=jwt_token_here`
+- **Header:** `Authorization: Bearer jwt_token_here`
 
 ---
 
